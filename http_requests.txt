@@ -22,11 +22,15 @@ answer the following...
 1. GET /movies
 Fill this in with what the page will look like in the browser:
 
+Title: A New Hope, Year: 1977
+Title: The Empire Strikes Back, Year: 1980
+Title: Return of the Jedi, Year: 1983
 
 
 2. GET /movies/1
 Fill this in with what the page will look like in the browser:
 
+Title: A New Hope , Year: 1977
 
 
 3. POST /movies with params {:movie => {:title => "The Phantom Menace", :year => 1998}}
@@ -35,13 +39,13 @@ Fill in what the database should look like after a post with parameters
 ================================================
 |  id  |            Title           |   Year   |
 ================================================
-|      |                            |          |
+|  1   |          A New Hope        |   1977   |
 ------------------------------------------------
-|      |                            |          |
+|  2   |  The Empire Strikes Back   |   1980   |
 ------------------------------------------------
-|      |                            |          |
+|  3   |     Return of the Jedi     |   1983   |
 ------------------------------------------------
-|      |                            |          |
+|  4   |  The Phantom Manace        |   1998   |
 ------------------------------------------------
 
 4. PUT /movies/4 {:movie => {:title => "The Phantom Menace", :year => 1999}}
@@ -50,17 +54,22 @@ Fill in what the database should look like after the PUT with the parameters
 ================================================
 |  id  |            Title           |   Year   |
 ================================================
-|      |                            |          |
+|  1   |          A New Hope        |   1977   |
 ------------------------------------------------
-|      |                            |          |
+|  2   |  The Empire Strikes Back   |   1980   |
 ------------------------------------------------
-|      |                            |          |
+|  3   |     Return of the Jedi     |   1983   |
 ------------------------------------------------
-|      |                            |          |
+|  4   |    The Phantom Menace      |   1999   |
 ------------------------------------------------
 
 5. GET /movies
-Fill in what the page should look like in the browser
+Fill in what the page should look like in the browserTitle: 
+
+Title: A New Hope, Year: 1977
+Title: The Empire Strikes Back, Year: 1980
+Title: Return of the Jedi, Year: 1983
+Title: The Phantom Menace, Year: 1999
 
 
 6. DELETE /movies/4
@@ -69,9 +78,9 @@ Fill in what the database should look like after the above request
 ================================================
 |  id  |            Title           |   Year   |
 ================================================
-|      |                            |          |
+|  1   |          A New Hope        |   1977   |
 ------------------------------------------------
-|      |                            |          |
+|  2   |  The Empire Strikes Back   |   1980   |
 ------------------------------------------------
-|      |                            |          |
+|  3   |     Return of the Jedi     |   1983   |
 ------------------------------------------------
