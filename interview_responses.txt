@@ -1,9 +1,87 @@
 You can write your responses here!
 
-1.
+1. Pick one fruit from the one marked "Apples + Oranges":
 
-2.
+	If it's Apple, then:
+		change "Apple + Orange" to "Apple";
+		the "Apple" one change to "Orange";
+		the "Orange" one change to "Apple + Orange".
 
-3.
+	If it's Orange, then:
+		change "Apple + Orange" to "Orange";
+		the "Apple" one change to "Apple + Orange";
+		the "Orange" one change to "Apple"
 
-4.
+2. 
+
+class ReverseString
+	def initialize(str)
+		@str=str
+	end
+
+	def my_reverse()
+		reverse = ""
+		@str.length.times do |i|
+  			reverse.insert(i, @str[-1-i].chr)
+  		end
+  		reverse
+  	end
+end
+
+s=ReverseString.new("hello world")
+puts s.my_reverse()
+
+#3.a. using recursion
+
+class NestedSum
+	def recursion(array)
+		summ=0
+		array.each do |current_el|
+			if current_el.kind_of? Integer
+				summ += current_el
+			else
+				summ += self.recursion(current_el)
+			end
+		end
+		summ
+	end
+end
+
+ns=NestedSum.new()
+
+puts ns.recursion([5,4,8])
+#Result: 17
+
+puts ns.recursion([1,[4,8],2,1])
+#Result: 16
+
+#3.b. without using recursion
+
+class NestedSum
+	def no_recursion(array)
+		summ=0
+		list = []
+		array2 = array
+		while array2 != nil do
+			array2.each do |current_el|
+				#puts current_el
+				if current_el.kind_of? Integer
+					summ += current_el
+				else
+					list.push(current_el)
+				end
+			end
+			array2 = list.pop
+		end
+		summ
+	end
+end
+
+ns=NestedSum.new()
+
+puts ns.no_recursion([1, [2,[3,6,1]],4])
+#Result: 17
+
+
+4. You have to take 1 pill from the first bottle, two pills from the 2nd bottle, 3 pills from the 3rd bottle, ..., 10 pills from the 10th bottle. Put all of the taken pills on a scale. You have to calculate: 10 - (weight % 10). The result will tell you the number of the bottle with contaminated pills.
+
